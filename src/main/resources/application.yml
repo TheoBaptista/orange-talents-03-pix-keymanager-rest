@@ -1,3 +1,4 @@
 micronaut:
   application:
-    name: keymanagerRest
+    name: keyManagerRest
+coherence.session.default.type: grpc

@@ -6,15 +6,23 @@
 - [Micronaut Guides](https://guides.micronaut.io/index.html)
 ---
 
-## Feature http-client documentation
+## Feature coherence documentation
 
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+- [Micronaut Coherence documentation](https://micronaut-projects.github.io/micronaut-coherence/1.0.x/guide/index.html)
 
-## Feature hibernate-validator documentation
+- [https://coherence.java.net/](https://coherence.java.net/)
 
-- [Micronaut Hibernate Validator documentation](https://micronaut-projects.github.io/micronaut-hibernate-validator/latest/guide/index.html)
+## Feature coherence-grpc-client documentation
+
+- [Micronaut Coherence gRPC Client documentation](https://micronaut-projects.github.io/micronaut-coherence/1.0.x/guide/index.html#grpc)
+
+- [https://coherence.java.net/](https://coherence.java.net/)
 
 ## Feature mockito documentation
 
 - [https://site.mockito.org](https://site.mockito.org)
+
+## Feature http-client documentation
+
+- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
 
