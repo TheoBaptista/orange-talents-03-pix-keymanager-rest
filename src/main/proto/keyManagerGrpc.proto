@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "KeyManagerGrpc";
+
+
+package br.com.zup.edu;
+
+import "google/protobuf/timestamp.proto";
+
+service RegisterKeyGrpcService {
+  rpc register (RegisterKeyGrpcRequest) returns (RegisterKeyGrpcResponse) {}
+}
+
+service DeleteKeyGrpcService {
+  rpc delete (DeleteKeyGrpcRequest) returns (DeleteKeyGrpcResponse) {}
+}
+
+service LoadKeyGrpcService{
+  rpc load(LoadKeyRequest) returns (LoadKeyResponse){}
+}
+
+service ListAllKeysGrpcService{
+  rpc listAll(ListAllRequest) returns(ListAllResponse){}
+}
+
+enum KeyType{
+  UNKNOWN_KEY_TYPE = 0;
+  CPF = 1;
+  CELLPHONE = 2;
+  EMAIL = 3;
+  RANDOM = 4;
+}
+
+enum AccountType{
+  UNKNOWN_ACCOUNT_TYPE = 0;
+  CONTA_CORRENTE = 1;
+  CONTA_POUPANCA = 2;
+}
+
+message RegisterKeyGrpcRequest {
+  string clientId = 1;
+  KeyType keyType = 2;
+  string  keyValue = 3;
+  AccountType clientAccountType = 4;
+}
+
+message RegisterKeyGrpcResponse {
+  string pixId = 1;
+  string clientId = 2;
+}
+
+message DeleteKeyGrpcRequest{
+  string pixId = 1;
+  string clientId = 2;
+}
+
+message DeleteKeyGrpcResponse{
+  string pixId = 1;
+  string clientId = 2;
+}
+
+message LoadKeyRequest{
+  message WhitPixId{
+    string clientId =1;
+    string pixId = 2;
+  }
+
+  oneof filter{
+    WhitPixId pixId = 1;
+    string  pixKey = 2;
+  }
+}
+
+message LoadKeyResponse{
+
+  message PixKey{
+
+    message InfoAccount {
+      AccountType type     = 1;
+      string institution   = 2;
+      string ownerName = 3;
+      string cpf  = 4;
+      string agency       = 5;
+      string accountNumber = 6;
+    }
+
+    KeyType type        = 1;
+    string key            = 2;
+    InfoAccount account         = 3;
+    google.protobuf.Timestamp criadaEm = 4;
+  }
+
+  string clienteId = 1;
+  string pixId     = 2;
+  PixKey key   = 3;
+}
+
+message ListAllRequest {
+  string clientId = 1;
+}
+message ListAllResponse{
+
+  message PixKey{
+    string pixId = 1;
+    KeyType type = 2;
+    string key = 3;
+    AccountType accountType = 4;
+    google.protobuf.Timestamp createdAt = 5;
+  }
+  string clientId = 1;
+  repeated PixKey keys= 2;
+}

@@ -1,4 +1,10 @@
 micronaut:
   application:
     name: keyManagerRest
-coherence.session.default.type: grpc
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    keyManager:
+      address: '${KEY_MANAGER_HOST:localhost}:${KEY_MANAGER_PORT:50051}'
