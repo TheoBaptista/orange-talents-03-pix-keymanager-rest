@@ -27,7 +27,7 @@ service ListAllKeysGrpcService{
 enum KeyType{
   UNKNOWN_KEY_TYPE = 0;
   CPF = 1;
-  CELLPHONE = 2;
+  PHONE = 2;
   EMAIL = 3;
   RANDOM = 4;
 }

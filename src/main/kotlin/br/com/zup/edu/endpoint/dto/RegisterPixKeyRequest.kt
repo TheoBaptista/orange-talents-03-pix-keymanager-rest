@@ -6,6 +6,7 @@ import br.com.zup.edu.RegisterKeyGrpcRequest
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.Size
 
+
 data class RegisterPixKeyRequest(
     @field:Size(max = 77) val key: String?,
     @field:NotBlank val keyType: String?,

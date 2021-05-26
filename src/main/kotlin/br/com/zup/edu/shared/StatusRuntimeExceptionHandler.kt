@@ -4,6 +4,7 @@ import io.grpc.Status
 import io.grpc.StatusRuntimeException
 import io.micronaut.http.HttpResponse
 
+
 fun resolver(e: StatusRuntimeException): HttpResponse<Any> {
    return when(e.status.code){
            Status.INVALID_ARGUMENT.code -> HttpResponse.badRequest(e.status)
