@@ -46,6 +46,7 @@ dependencies {
     testImplementation("io.micronaut:micronaut-http-client")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.hamcrest:hamcrest-core:2.2")
+    testImplementation("org.mockito:mockito-inline:2.13.0")
 
 }
 
